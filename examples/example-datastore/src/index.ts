@@ -86,7 +86,7 @@ async function init(): Promise<void> {
   commands.addCommand('undo', {
     label: 'Undo',
     execute: () => {
-      let editor = ArrayExt.findFirstValue([e1, e2, e3], e => e.hasFocus());
+      let editor = ArrayExt.findFirstValue([e1, e2, e3], (e: CodeMirrorEditor) => e.hasFocus());
       if (editor) {
         editor.undo();
       }
@@ -95,7 +95,7 @@ async function init(): Promise<void> {
   commands.addCommand('redo', {
     label: 'Redo',
     execute: () => {
-      let editor = ArrayExt.findFirstValue([e1, e2, e3], e => e.hasFocus());
+      let editor = ArrayExt.findFirstValue([e1, e2, e3], (e: CodeMirrorEditor) => e.hasFocus());
       if (editor) {
         editor.redo();
       }
