@@ -16,7 +16,14 @@
     "types": [
       "chai",
       "mocha"
-    ]
+    ],
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@phosphor/datastore": [
+        "../lib/index"
+      ]
+    }
   },
   "include": [
     "src/*"

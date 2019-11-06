@@ -5,6 +5,12 @@ module.exports = {
   output: {
     filename: './build/bundle.test.js'
   },
+  resolve: {
+    alias: {
+      "@phosphor/widgets/style": path.resolve(__dirname, '../style'),
+      "@phosphor/widgets": path.resolve(__dirname, '../lib/index')
+    }
+  },
   module: {
     rules: [
       {
