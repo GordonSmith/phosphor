@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "install": "lerna bootstrap",
+    "uninstall": "lerna clean",
     "build": "lerna run build",
     "build:examples": "lerna run build --scope \"@phosphor/example-*\"",
     "build:src": "lerna run build --scope \"@phosphor/!(test-|example-)*\"",
