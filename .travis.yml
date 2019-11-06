@@ -2,21 +2,16 @@ dist: xenial
 services:
   - xvfb
 language: node_js
-node_js:
-  '8'
+node_js: "8"
 addons:
   firefox: latest
 sudo: false
-install:
-  - npm install -g yarn
-  - yarn
-script:
-    set -e;
-    pushd packages/widgets;
-    yarn build;
-    popd;
-    yarn clean;
-    yarn build;
-    yarn build:test;
-    yarn test;
-    yarn docs;
+script: set -e;
+  pushd packages/widgets;
+  npm run build;
+  popd;
+  npm run clean;
+  npm run build;
+  npm run build:test;
+  npm run test;
+  npm run docs;

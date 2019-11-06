@@ -53,18 +53,18 @@ class DropTarget {
   handleEvent(event: Event): void {
     this.events.push(event.type);
     switch (event.type) {
-    case 'p-dragenter':
-      this._evtDragEnter(event as IDragEvent);
-      break;
-    case 'p-dragleave':
-      this._evtDragLeave(event as IDragEvent);
-      break;
-    case 'p-dragover':
-      this._evtDragOver(event as IDragEvent);
-      break;
-    case 'p-drop':
-      this._evtDrop(event as IDragEvent);
-      break;
+      case 'p-dragenter':
+        this._evtDragEnter(event as IDragEvent);
+        break;
+      case 'p-dragleave':
+        this._evtDragLeave(event as IDragEvent);
+        break;
+      case 'p-dragover':
+        this._evtDragOver(event as IDragEvent);
+        break;
+      case 'p-drop':
+        this._evtDrop(event as IDragEvent);
+        break;
     }
   }
 
@@ -304,24 +304,24 @@ describe('@phosphor/dragdrop', () => {
 
         it('should dispatch an enter and leave events', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-dragenter');
           child0.events = [];
           rect = child1.node.getBoundingClientRect();
-          simulate(child1.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child1.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-dragleave');
           expect(child1.events).to.contain('p-dragenter');
         });
 
         it('should dispatch drag over event', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-dragover');
         });
 
         it('should move the drag image to the client location', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 });
           let image = drag.dragImage!;
           expect(image.style.top).to.equal(`${rect.top + 1}px`);
           expect(image.style.left).to.equal(`${rect.left + 1}px`);
@@ -339,17 +339,17 @@ describe('@phosphor/dragdrop', () => {
 
         it('should do nothing if the left button is not released', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1, button: 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1, button: 1 });
           expect(child0.events).to.not.contain('p-dragenter');
         });
 
         it('should dispatch enter and leave events', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mousemove', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-dragenter');
           child0.events = [];
           rect = child1.node.getBoundingClientRect();
-          simulate(child1.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child1.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-dragleave');
           expect(child1.events).to.contain('p-dragenter');
         });
@@ -359,7 +359,7 @@ describe('@phosphor/dragdrop', () => {
           drag = new Drag({ mimeData: new MimeData(), supportedActions: 'none' });
           drag.start(0, 0);
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-dragleave');
         });
 
@@ -371,12 +371,12 @@ describe('@phosphor/dragdrop', () => {
             done();
           });
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
         });
 
         it('should dispatch the drop event at the current target', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(child0.events).to.contain('p-drop');
         });
 
@@ -388,7 +388,7 @@ describe('@phosphor/dragdrop', () => {
             done();
           });
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
         });
 
         it('should handle a `move` action', (done) => {
@@ -399,25 +399,25 @@ describe('@phosphor/dragdrop', () => {
             done();
           });
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
         });
 
         it('should dispose of the drop', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(drag.isDisposed).to.equal(true);
         });
 
         it('should detach the drag image', () => {
           let image = drag.dragImage!;
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
           expect(document.body.contains(image)).to.equal(false);
         });
 
         it('should remove event listeners', () => {
           let rect = child0.node.getBoundingClientRect();
-          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 } );
+          simulate(child0.node, 'mouseup', { clientX: rect.left + 1, clientY: rect.top + 1 });
           ['mousemove', 'keydown', 'contextmenu'].forEach(name => {
             let evt = generate(name);
             let canceled = !document.body.dispatchEvent(evt);

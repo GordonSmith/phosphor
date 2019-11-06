@@ -17,7 +17,13 @@
       "chai",
       "mocha"
     ],
-    "rootDir": "src"
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@phosphor/virtualdom": [
+        "../lib/index"
+      ]
+    }
   },
   "include": [
     "src/*"

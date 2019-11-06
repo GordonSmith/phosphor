@@ -4,5 +4,9 @@ module.exports = {
   entry: './build/index.spec.js',
   output: {
     filename: './build/bundle.test.js'
+  }, resolve: {
+    alias: {
+      "@phosphor/applocation": path.resolve(__dirname, '../lib/index')
+    }
   }
 }

@@ -16,7 +16,13 @@
       "chai",
       "mocha"
     ],
-    "rootDir": "src"
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@phosphor/application": [
+        "../lib/index"
+      ]
+    }
   },
   "include": [
     "src/*"
