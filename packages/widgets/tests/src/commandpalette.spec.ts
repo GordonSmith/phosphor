@@ -45,7 +45,7 @@ class LogPalette extends CommandPalette {
 }
 
 
-const defaultOptions: CommandPalette.IItemOptions  = {
+const defaultOptions: CommandPalette.IItemOptions = {
   command: 'test',
   category: 'Test Category',
   args: { foo: 'bar' },
@@ -459,6 +459,7 @@ describe('@phosphor/widgets', () => {
             node = content.querySelector('.p-CommandPalette-item.p-mod-active');
             expect(node).to.equal(null);
           });
+          expect(called).to.be.false;
         });
 
         it('should trigger active item if enter is pressed', () => {

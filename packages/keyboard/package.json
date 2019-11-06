@@ -30,7 +30,7 @@
   "scripts": {
     "build": "tsc --build",
     "build:test": "tsc --build tests && cd tests && webpack",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib && rimraf *.tsbuildinfo",
     "clean:test": "rimraf tests/build",
     "docs": "typedoc --options tdoptions.json src",
     "test": "npm run test:firefox",
@@ -52,8 +52,8 @@
     "mocha": "^3.2.0",
     "rimraf": "^2.5.2",
     "simulate-event": "^1.4.0",
-    "typedoc": "~0.12.0",
-    "typescript": "~3.0.3",
+    "typedoc": "~0.15.0",
+    "typescript": "~3.5.2",
     "webpack": "^2.2.1"
   }
 }
