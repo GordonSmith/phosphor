@@ -30,7 +30,7 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib && rimraf *.tsbuildinfo",
     "docs": "typedoc --options tdoptions.json src",
     "test": "npm run test:firefox",
     "test:chrome": "cd tests && karma start --browsers=Chrome",
@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.5.2",
-    "typedoc": "~0.15.0",
+    "typedoc": "~0.12.0",
     "typescript": "~3.5.1"
   }
 }
